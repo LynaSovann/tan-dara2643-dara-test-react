@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tan-dara2643-dara-test-react-ingress
+  namespace: tan-dara2643-dara-test-react
+  annotation:
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: dara.darasr.online
+    http:
+      paths:
+      - path: /
+        pathType: Prefix  
+        backend:
+          service:
+            name: tan-dara2643-dara-test-react-service 
+            port:
+              number: 8332
